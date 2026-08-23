@@ -12,9 +12,8 @@ A prefab from the game is made, this prefab is exported as an AssetBundle and pu
 - Add SDK folder (Not yet)
 - Add Documentation and Wiki for SDK (Not yet)
 
-# My dumb test table. T_001 with heart shaped bumpers moved around (it looks bad but it's WiP)
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6fe83f04-e58f-47c3-bb4e-fe7f9b2566d7" />
-
+# Included is "Ashley's Grotto" a Sanrio themed Pinball Table.
+<img width="1045" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb1ac408-8a7b-49f8-a1d2-765bd50bb29b" />
 
 
 
