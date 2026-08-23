@@ -1,7 +1,2 @@
-# CultOfAsh
-CultOfPiN Custom Tables BepinEx plugin and reversed information on how to make your own.
-
-# TODO
-Setup Structure
-Upload Local files
-Provide Instructions on how to do it yourself (Will make an SDK for it later)
+# Reliquary
+A Plugin (and by extension Mod SDK) for making custom tables in the Roguelike pinball game "Cult of PiN" using reversed information
