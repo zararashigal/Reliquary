@@ -11,3 +11,5 @@ A prefab from the game is made, this prefab is exported as an AssetBundle and pu
 - Fix Shader issues (Not yet)
 - Add SDK folder (Not yet)
 - Add Documentation and Wiki for SDK (Not yet)
+
+# Sponsored by the local Psych Ward :3c
