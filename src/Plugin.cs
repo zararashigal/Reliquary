@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -45,6 +46,7 @@ namespace Reliquary
                     KcTable table = prefab.GetComponent<KcTable>();
                     if (table != null)
                     {
+                        FixShaders(prefab);
                         LoadedCustomTables.Add(table);
                         Log.LogInfo($"Found custom table '{table.TableID}' in {Path.GetFileName(bundleFile)}");
                     }
@@ -56,6 +58,53 @@ namespace Reliquary
             var harmony = new Harmony("com.ashley.reliquary");
             harmony.PatchAll();
             Log.LogInfo("Harmony patches applied.");
+        }
+
+        public static void FixShaders(GameObject go)
+        {
+            foreach (var renderer in go.GetComponentsInChildren<Renderer>(true))
+            {
+                foreach (var mat in renderer.materials)
+                {
+                    if (mat != null && mat.shader != null)
+                    {
+                        Shader foundShader = Shader.Find(mat.shader.name);
+                        if (foundShader != null)
+                        {
+                            mat.shader = foundShader;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void ResetShaderGlobal()
+        {
+            Type loaderType = null;
+            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                loaderType = asm.GetTypes().FirstOrDefault(t => t.Name == "KcShaderGlobalLoader");
+                if (loaderType != null) break;
+            }
+
+            if (loaderType != null)
+            {
+                MethodInfo resetMethod = loaderType.GetMethod("ResetShader", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
+                if (resetMethod != null)
+                {
+                    resetMethod.Invoke(null, null);
+                }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(KcTable), "Awake")]
+    public static class KcTableAwakePatch
+    {
+        static void Postfix(KcTable __instance)
+        {
+            Plugin.FixShaders(__instance.gameObject);
+            Plugin.ResetShaderGlobal();
         }
     }
 
@@ -82,12 +131,12 @@ namespace Reliquary
         }
     }
 
-    [HarmonyPatch(typeof(KcTableSelectPanel), "Show")]
+    [HarmonyPatch(typeof(KcTableSelectPanel), "OnEnable")]
     public static class KcTableSelectPanelPatch
     {
         static void Postfix(KcTableSelectPanel __instance)
         {
-            Plugin.Log.LogInfo("KcTableSelectPanel.Show Postfix firing.");
+            Plugin.Log.LogInfo("KcTableSelectPanel.OnEnable Postfix firing.");
 
             if (Plugin.LoadedCustomTables.Count == 0)
             {
@@ -107,7 +156,7 @@ namespace Reliquary
 
                 foreach (var table in Plugin.LoadedCustomTables)
                 {
-                    var newCardObj = Object.Instantiate(templateCard.gameObject, templateCard.transform.parent);
+                    var newCardObj = UnityEngine.Object.Instantiate(templateCard.gameObject, templateCard.transform.parent);
                     var newCard = newCardObj.GetComponent<KcTableSelectOption>();
 
                     var stats = new TableStats

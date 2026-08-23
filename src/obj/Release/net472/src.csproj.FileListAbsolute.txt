@@ -1,0 +1,10 @@
+/home/ashley/Reliquary/src/bin/Release/net472/Reliquary.dll
+/home/ashley/Reliquary/src/bin/Release/net472/Reliquary.pdb
+/home/ashley/Reliquary/src/obj/Release/net472/src.csproj.AssemblyReference.cache
+/home/ashley/Reliquary/src/obj/Release/net472/src.GeneratedMSBuildEditorConfig.editorconfig
+/home/ashley/Reliquary/src/obj/Release/net472/src.AssemblyInfoInputs.cache
+/home/ashley/Reliquary/src/obj/Release/net472/src.AssemblyInfo.cs
+/home/ashley/Reliquary/src/obj/Release/net472/src.csproj.CoreCompileInputs.cache
+/home/ashley/Reliquary/src/obj/Release/net472/src.sourcelink.json
+/home/ashley/Reliquary/src/obj/Release/net472/Reliquary.dll
+/home/ashley/Reliquary/src/obj/Release/net472/Reliquary.pdb
