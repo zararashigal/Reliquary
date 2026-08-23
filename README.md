@@ -3,6 +3,9 @@
 # Reliquary
 A Plugin (and by extension Mod SDK) for making custom tables in the Roguelike pinball game "Cult of PiN" using reversed information
 
+# Rough Documentation
+A prefab from the game is made, this prefab is exported as an AssetBundle and put in the tables folder. The easiest way to do this *right now* without the SDK is to duplicate TABLE_001 and make your own table with this prefab.
+
 # Roadmap
 - Load Custom Tables (Yus)
 - Fix Shader issues (Not yet)
