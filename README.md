@@ -8,7 +8,7 @@ A prefab from the game is made, this prefab is exported as an AssetBundle and pu
 
 # Roadmap
 - Load Custom Tables (Yus)
-- Fix Shader issues (Not yet)
+- Fix Shader issues (Done! Thanks to the game's developer Kenny for telling me about how KcShaderGlobalLoader works in this game in particuliar!)
 - Add SDK folder (Not yet)
 - Add Documentation and Wiki for SDK (Not yet)
 
