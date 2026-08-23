@@ -82,12 +82,12 @@ namespace Reliquary
         }
     }
 
-    [HarmonyPatch(typeof(KcTableSelectPanel), "Start")]
+    [HarmonyPatch(typeof(KcTableSelectPanel), "Show")]
     public static class KcTableSelectPanelPatch
     {
         static void Postfix(KcTableSelectPanel __instance)
         {
-            Plugin.Log.LogInfo("KcTableSelectPanel.Start Postfix firing.");
+            Plugin.Log.LogInfo("KcTableSelectPanel.Show Postfix firing.");
 
             if (Plugin.LoadedCustomTables.Count == 0)
             {
