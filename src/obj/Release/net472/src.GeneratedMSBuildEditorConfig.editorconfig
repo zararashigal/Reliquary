@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Reliquary
+build_property.ProjectDir = /home/ashley/Reliquary/src/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
