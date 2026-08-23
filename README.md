@@ -13,8 +13,7 @@ A prefab from the game is made, this prefab is exported as an AssetBundle and pu
 - Add Documentation and Wiki for SDK (Not yet)
 
 # Included is "Ashley's Grotto" a Sanrio themed Pinball Table.
-<img width="1045" height="1080" alt="image" src="https://github.com/user-attachments/assets/bb1ac408-8a7b-49f8-a1d2-765bd50bb29b" />
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/cd8acd98-b88e-44bd-8151-a8337c6abc8f" />
 
 
 # Sponsored by the local Psych Ward :3c I get knocked down, but i get up again~
